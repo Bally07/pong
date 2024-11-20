@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/oscar/source/repos/pong/Pong/Content/splash screen.png</SourceFile>
+  <SourceFile>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/splash screen.png</SourceFile>
   <SourceTime>2024-11-15T10:31:47.3759546+00:00</SourceTime>
-  <DestFile>C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/splash screen.xnb</DestFile>
-  <DestTime>2024-11-15T10:34:13.9850211+00:00</DestTime>
+  <DestFile>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/splash screen.xnb</DestFile>
+  <DestTime>2024-11-20T12:05:52.2882368+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

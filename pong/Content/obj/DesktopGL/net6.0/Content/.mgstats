@@ -1,8 +1,8 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/oscar/source/repos/pong/Pong/Content/ball.png","C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",1513,26329,0.1664279
-"C:/Users/oscar/source/repos/pong/Pong/Content/ballBounce.wav","C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/ballBounce.xnb","SoundEffectProcessor","SoundEffectContent",39612,39461,0.2900613
-"C:/Users/oscar/source/repos/pong/Pong/Content/File.spritefont","C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/Fonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2542312
-"C:/Users/oscar/source/repos/pong/Pong/Content/Game over splash.png","C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/Game over splash.xnb","TextureProcessor","Texture2DContent",16776,2522885,0.2349659
-"C:/Users/oscar/source/repos/pong/Pong/Content/padle.png","C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/padle.xnb","TextureProcessor","Texture2DContent",185,4465,0.0039851
-"C:/Users/oscar/source/repos/pong/Pong/Content/pongBoard.png","C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/pongBoard.xnb","TextureProcessor","Texture2DContent",176,14085,0.1830338
-"C:/Users/oscar/source/repos/pong/Pong/Content/splash screen.png","C:/Users/oscar/source/repos/pong/Pong/Content/bin/DesktopGL/Content/splash screen.xnb","TextureProcessor","Texture2DContent",4387,2073685,0.0607036
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ball.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",1513,26329,0.1877563
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ballBounce.wav","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/ballBounce.xnb","SoundEffectProcessor","SoundEffectContent",39612,39461,0.4188642
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/File.spritefont","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/Fonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.1452225
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/Game over splash.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/Game over splash.xnb","TextureProcessor","Texture2DContent",16776,2522885,0.0785887
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/padle.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/padle.xnb","TextureProcessor","Texture2DContent",185,4465,0.0021268
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/pongBoard.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/pongBoard.xnb","TextureProcessor","Texture2DContent",176,14085,0.0025287
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/splash screen.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/splash screen.xnb","TextureProcessor","Texture2DContent",4387,2073685,0.0820258

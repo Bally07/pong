@@ -149,7 +149,7 @@ namespace pong
             void level(int level)
         {
             
-            if (GamePad.GetState(PlayerIndex.One).Buttons.LeftShoulder == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.LeftShoulder == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.C))
             {
                 cheats = true;
             }

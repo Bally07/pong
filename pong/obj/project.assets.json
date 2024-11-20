@@ -107,11 +107,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\pong\\pong\\pong.csproj",
-      "projectName": "pong",
-      "projectPath": "C:\\Users\\oscar\\source\\repos\\pong\\pong\\pong.csproj",
+      "projectUniqueName": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\Pong.csproj",
+      "projectName": "Pong",
+      "projectPath": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\Pong.csproj",
       "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oscar\\source\\repos\\pong\\pong\\obj\\",
+      "outputPath": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",

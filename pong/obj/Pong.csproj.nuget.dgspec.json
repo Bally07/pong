@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oscar\\source\\repos\\pong\\Pong\\Pong.csproj": {}
+    "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\Pong.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oscar\\source\\repos\\pong\\Pong\\Pong.csproj": {
+    "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\Pong.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\pong\\Pong\\Pong.csproj",
+        "projectUniqueName": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\Pong.csproj",
         "projectName": "Pong",
-        "projectPath": "C:\\Users\\oscar\\source\\repos\\pong\\Pong\\Pong.csproj",
+        "projectPath": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\Pong.csproj",
         "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oscar\\source\\repos\\pong\\Pong\\obj\\",
+        "outputPath": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\Pong\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",
