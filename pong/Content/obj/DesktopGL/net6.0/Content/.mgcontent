@@ -6,7 +6,6 @@
   <SourceFiles>
     <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ball.png</File>
     <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ballBounce.wav</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/File.spritefont</File>
     <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/Game over splash.png</File>
     <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/padle.png</File>
     <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/pongBoard.png</File>
@@ -15,7 +14,6 @@
   <DestFiles>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
-    <File>Fonts.spritefont</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

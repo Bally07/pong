@@ -31,6 +31,13 @@
 /processorParam:Quality=Best
 /build:ballBounce.wav
 
+#begin endscreenfonts.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:endscreenfonts.spritefont
+
 #begin File.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

@@ -21,7 +21,7 @@ namespace pong
         int highscore = 1972;
         int exitcount = 0;
         int timer;
-        SpriteFont font;
+        SpriteFont playfont,endfont;
         Texture2D PLR1, PLR2, Ball, startscreen, Board, gameoverscreen;
         Rectangle P1HitBox, P2HitBox, BallHitBox, board, background;
         bool gameover = false;
@@ -61,7 +61,8 @@ namespace pong
             PLR1 = Content.Load<Texture2D>("padle");
             PLR2 = Content.Load<Texture2D>("padle");
             Ball = Content.Load<Texture2D>("ball");
-            font = Content.Load<SpriteFont>("File");
+            playfont = Content.Load<SpriteFont>("File");
+            endfont = Content.Load<SpriteFont>("endscreenfonts");
             startscreen = Content.Load<Texture2D>("splash screen");
             gameoverscreen = Content.Load<Texture2D>("Game over splash");
             playbounce = Content.Load<SoundEffect>("ballBounce");
@@ -107,7 +108,7 @@ namespace pong
             else if (Nstarted == false && gameover == false)
             {
                 GraphicsDevice.Clear(Color.Black);
-                _spriteBatch.DrawString(font, $"Player 1 points:{P1pointCounter}\nCPU points:{P2pointCounter}", textPos, Color.White);
+                _spriteBatch.DrawString(playfont, $"Player 1 points:{P1pointCounter}\nCPU points:{P2pointCounter}", textPos, Color.White);
                 _spriteBatch.Draw(Board, board, Color.White);
                 _spriteBatch.Draw(PLR1, P1HitBox, Color.FloralWhite);
                 _spriteBatch.Draw(PLR2, P2HitBox, Color.FloralWhite);
