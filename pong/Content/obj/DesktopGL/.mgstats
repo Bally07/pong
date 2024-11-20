@@ -1,0 +1,8 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/oscar/source/repos/pong/pong/Content/ball.png","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",1513,26329,0.1705798
+"C:/Users/oscar/source/repos/pong/pong/Content/ballBounce.wav","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/ballBounce.xnb","SoundEffectProcessor","SoundEffectContent",39612,39461,0.5576155
+"C:/Users/oscar/source/repos/pong/pong/Content/File.spritefont","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/Fonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2656536
+"C:/Users/oscar/source/repos/pong/pong/Content/Game over splash.png","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/Game over splash.xnb","TextureProcessor","Texture2DContent",16776,2522885,0.2887795
+"C:/Users/oscar/source/repos/pong/pong/Content/padle.png","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/padle.xnb","TextureProcessor","Texture2DContent",185,4465,0.1563656
+"C:/Users/oscar/source/repos/pong/pong/Content/pongBoard.png","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/pongBoard.xnb","TextureProcessor","Texture2DContent",472,201685,0.0158696
+"C:/Users/oscar/source/repos/pong/pong/Content/splash screen.png","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/splash screen.xnb","TextureProcessor","Texture2DContent",4387,2073685,0.2182589

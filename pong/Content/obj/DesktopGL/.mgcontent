@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/oscar/source/repos/pong/pong/Content/ballBounce.wav</File>
+    <File>C:/Users/oscar/source/repos/pong/pong/Content/splash screen.png</File>
+    <File>C:/Users/oscar/source/repos/pong/pong/Content/padle.png</File>
+    <File>C:/Users/oscar/source/repos/pong/pong/Content/ball.png</File>
+    <File>C:/Users/oscar/source/repos/pong/pong/Content/Game over splash.png</File>
+    <File>C:/Users/oscar/source/repos/pong/pong/Content/File.spritefont</File>
+    <File>C:/Users/oscar/source/repos/pong/pong/Content/pongBoard.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File>Fonts.spritefont</File>
+  </DestFiles>
+</SourceFileCollection>
