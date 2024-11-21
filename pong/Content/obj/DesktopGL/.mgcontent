@@ -4,6 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/oscar/Documents/GitHub/pong/pong/Content/play.spritefont</File>
+    <File>C:/Users/oscar/Documents/GitHub/pong/pong/Content/over.spritefont</File>
+    <File>C:/Users/oscar/Documents/GitHub/pong/pong/Content/over.fx</File>
     <File>C:/Users/oscar/Documents/GitHub/pong/pong/Content/endscreenfonts.spritefont</File>
     <File>C:/Users/oscar/Documents/GitHub/pong/pong/Content/File.spritefont</File>
     <File>C:/Users/oscar/source/repos/pong/pong/Content/ballBounce.wav</File>

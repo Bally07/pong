@@ -16,7 +16,6 @@ namespace pong
         private SpriteBatch _spriteBatch;
         const int plrSpeed = 10;
         const int BallSpeed = 8;
-
         bool Nstarted = true;
         int highscore = 1972;
         int exitcount = 0;
@@ -28,24 +27,22 @@ namespace pong
         bool gamePlaying = false;
         bool bounce = false;
         SoundEffect playbounce;
-
-
         bool Left = true;
         bool Top = true;
-
         int P1pointCounter, P2pointCounter;
         Random rand = new Random();
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
+            
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            
             P1HitBox = new Rectangle(0, (_graphics.GraphicsDevice.Viewport.Height) / 2, 25, 100);
             P2HitBox = new Rectangle(775, (_graphics.GraphicsDevice.Viewport.Height) / 2, 25, 100);
             background = new Rectangle(0, 0, _graphics.GraphicsDevice.Viewport.Width, _graphics.GraphicsDevice.Viewport.Height);
@@ -61,8 +58,8 @@ namespace pong
             PLR1 = Content.Load<Texture2D>("padle");
             PLR2 = Content.Load<Texture2D>("padle");
             Ball = Content.Load<Texture2D>("ball");
-            playfont = Content.Load<SpriteFont>("File");
-            endfont = Content.Load<SpriteFont>("endscreenfonts");
+            playfont = Content.Load<SpriteFont>("play");
+            endfont = Content.Load<SpriteFont>("over");
             startscreen = Content.Load<Texture2D>("splash screen");
             gameoverscreen = Content.Load<Texture2D>("Game over splash");
             playbounce = Content.Load<SoundEffect>("ballBounce");
@@ -421,7 +418,7 @@ namespace pong
             }
             void clock(int points, int clock)
             {
-                if (points > 10)
+                if (points < 10)
                 {
                     clock++;
                 }
@@ -440,6 +437,7 @@ namespace pong
                 }
                 return;
             }
+       
         
     }
 }

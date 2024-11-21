@@ -1,6 +1,9 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/oscar/Documents/GitHub/pong/pong/Content/endscreenfonts.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/endscreenfonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2744352
 "C:/Users/oscar/Documents/GitHub/pong/pong/Content/File.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/Fonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2633373
+"C:/Users/oscar/Documents/GitHub/pong/pong/Content/over.fx","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/over.xnb","EffectProcessor","CompiledEffectContent",888,1295,0.4402645
+"C:/Users/oscar/Documents/GitHub/pong/pong/Content/over.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/over.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2836961
+"C:/Users/oscar/Documents/GitHub/pong/pong/Content/play.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/play.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2546095
 "C:/Users/oscar/source/repos/pong/pong/Content/ball.png","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",1513,26329,0.1705798
 "C:/Users/oscar/source/repos/pong/pong/Content/ballBounce.wav","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/ballBounce.xnb","SoundEffectProcessor","SoundEffectContent",39612,39461,0.5576155
 "C:/Users/oscar/source/repos/pong/pong/Content/File.spritefont","C:/Users/oscar/source/repos/pong/pong/Content/bin/DesktopGL/Fonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2656536
