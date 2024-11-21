@@ -33,7 +33,12 @@ namespace pong
         Random rand = new Random();
         public Game1()
         {
+           
             _graphics = new GraphicsDeviceManager(this);
+            _graphics.PreferredBackBufferWidth = 1600;
+            _graphics.PreferredBackBufferHeight = 900;
+            _graphics.ApplyChanges();
+            _graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = false;
             
@@ -44,7 +49,7 @@ namespace pong
             // TODO: Add your initialization logic here
             
             P1HitBox = new Rectangle(0, (_graphics.GraphicsDevice.Viewport.Height) / 2, 25, 100);
-            P2HitBox = new Rectangle(775, (_graphics.GraphicsDevice.Viewport.Height) / 2, 25, 100);
+            P2HitBox = new Rectangle(_graphics.GraphicsDevice.Viewport.Width - 25, (_graphics.GraphicsDevice.Viewport.Height) / 2, 25, 100);
             background = new Rectangle(0, 0, _graphics.GraphicsDevice.Viewport.Width, _graphics.GraphicsDevice.Viewport.Height);
             BallHitBox = new Rectangle((_graphics.GraphicsDevice.Viewport.Width) / 2, (_graphics.GraphicsDevice.Viewport.Height) / 2, 50, 50);
             board = new Rectangle((_graphics.GraphicsDevice.Viewport.Width) / 2, 0, 5, _graphics.GraphicsDevice.Viewport.Height);
@@ -123,7 +128,7 @@ namespace pong
         }
             void pointssystem(int Point)
         {
-            if (BallHitBox.X < 0 || BallHitBox.X > 800) // point system
+            if (BallHitBox.X < 0 || BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width) // point system
 
             {
 

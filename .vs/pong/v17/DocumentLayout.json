@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\oscar\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\build\\MonoGame.Content.Builder.Task.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|c:\\users\\oscar\\documents\\github\\pong\\pong\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|solutionrelative:pong\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|c:\\users\\oscar\\documents\\github\\pong\\pong\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|solutionrelative:pong\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\oscar\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\build\\MonoGame.Content.Builder.Task.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|c:\\users\\oscar\\documents\\github\\pong\\pong\\content\\play.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -16,10 +20,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|c:\\users\\oscar\\documents\\github\\pong\\pong\\content\\over.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|solutionrelative:pong\\content\\over.spritefont||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|c:\\users\\oscar\\documents\\github\\pong\\pong\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3065E93D-D538-4D17-BB15-7FC718DDE2FD}|Pong\\Pong.csproj|solutionrelative:pong\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,11 +29,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "play.spritefont",
               "DocumentMoniker": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\pong\\Content\\play.spritefont",
               "RelativeDocumentMoniker": "pong\\Content\\play.spritefont",
@@ -41,12 +41,11 @@
               "RelativeToolTip": "pong\\Content\\play.spritefont",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-21T14:56:41.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T14:56:41.281Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "over.spritefont",
               "DocumentMoniker": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\pong\\Content\\over.spritefont",
               "RelativeDocumentMoniker": "pong\\Content\\over.spritefont",
@@ -54,12 +53,11 @@
               "RelativeToolTip": "pong\\Content\\over.spritefont",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-21T14:56:22.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T14:56:22.572Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\pong\\Program.cs",
               "RelativeDocumentMoniker": "pong\\Program.cs",
@@ -72,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MonoGame.Content.Builder.Task.targets",
               "DocumentMoniker": "C:\\Users\\oscar\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\build\\MonoGame.Content.Builder.Task.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\build\\MonoGame.Content.Builder.Task.targets",
@@ -85,13 +83,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\pong\\Game1.cs",
               "RelativeDocumentMoniker": "pong\\Game1.cs",
               "ToolTip": "C:\\Users\\oscar\\Documents\\GitHub\\pong\\pong\\Game1.cs",
               "RelativeToolTip": "pong\\Game1.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAgwEEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowDcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T11:54:36.056Z",
               "EditorCaption": ""
