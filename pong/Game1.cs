@@ -18,6 +18,9 @@ namespace pong
     {
         bool cheats = false;
         bool first = true;
+        List<string> scores = new List<string>();
+        string highscorefile = @"C:\Users\oscar\Documents\GitHub\pong\highscore_pong.txt";
+        StreamReader SR;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         const int plrSpeed = 10;
@@ -60,6 +63,7 @@ namespace pong
             background = new Rectangle(0, 0, _graphics.GraphicsDevice.Viewport.Width, _graphics.GraphicsDevice.Viewport.Height);
             BallHitBox = new Rectangle((_graphics.GraphicsDevice.Viewport.Width) / 2, (_graphics.GraphicsDevice.Viewport.Height) / 2, 50, 50);
             board = new Rectangle((_graphics.GraphicsDevice.Viewport.Width) / 2, 0, 5, _graphics.GraphicsDevice.Viewport.Height);
+            SR = new StreamReader(highscorefile);
             base.Initialize();
         }
 
@@ -94,8 +98,8 @@ namespace pong
                 Nstarted = false;
                 gameover = false;
             }
-            pointssystem(P1pointCounter,P2pointCounter, BallHitBox.X, BallHitBox.Y, gamePlaying);
-            level(P1pointCounter,cheats,BallHitBox.Y,P2HitBox.Y,P2HitBox.Height);
+            pointssystem( P1pointCounter, P2pointCounter);
+            level(P1pointCounter,P2HitBox.Height);
             movePlr(plrSpeed);
             moveball(BallSpeed);
             ishighscore(P1pointCounter, highscore);
@@ -132,28 +136,27 @@ namespace pong
 
             base.Draw(gameTime);
         }
-            void pointssystem(int Point, int Point2, int X,int Y,bool inplay)
+        void pointssystem(int P1point, int P2point)
         {
-            
 
-                if (X > _graphics.GraphicsDevice.Viewport.Width / 2)
-                {
-                    Point++;
-                }
-                else
-                {
-                    Point2++;
-                }
-                X = _graphics.GraphicsDevice.Viewport.Width / 2;
-                Y = _graphics.GraphicsDevice.Viewport.Height / 2;
-               inplay = false;
-
-
-            
-
+            if (BallHitBox.X < 0 || BallHitBox.X < _graphics.GraphicsDevice.Viewport.Width)
+            { 
+             if (BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width / 2)
+             {
+                P1point++;
+             }
+             else
+             {
+                P2point++;
+             }
+             BallHitBox.X = _graphics.GraphicsDevice.Viewport.Width / 2;
+             BallHitBox.Y = _graphics.GraphicsDevice.Viewport.Height / 2;
+             gamePlaying = false;
+            }
             return;
+
         }
-            void level(int level,bool CHEATS,int BALL_Y,int PLR_Y,int Height)
+            void level(int level,int Height)
         {
             
             if (GamePad.GetState(PlayerIndex.One).Buttons.LeftShoulder == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.C))
@@ -165,13 +168,13 @@ namespace pong
                 if (level < 10)
                 {
                     
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 1;
+                        P2HitBox.Y -= 1;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 1;
+                        P2HitBox.Y += 1;
                     }
                   
 
@@ -179,13 +182,13 @@ namespace pong
                 else if (level >= 10 && level < 20)
                 {
                    
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 2;
+                        P2HitBox.Y -= 2;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 2;
+                        P2HitBox.Y += 2;
                     }
                     
                 }
@@ -193,26 +196,26 @@ namespace pong
                 {
                   
 
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 3;
+                        P2HitBox.Y -= 3;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 3;
+                        P2HitBox.Y += 3;
                     }
                    
                 }
                 else if (level >= 30 && level < 40)
                 {
                    
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 4;
+                        P2HitBox.Y -= 4;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 4;
+                        P2HitBox.Y += 4;
                     }
                    
                 }
@@ -220,13 +223,13 @@ namespace pong
                 {
                     
 
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 5;
+                        P2HitBox.Y -= 5;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 5;
+                        P2HitBox.Y += 5;
                     }
                    
                 }
@@ -234,52 +237,52 @@ namespace pong
                 {
                    
 
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 6;
+                        P2HitBox.Y -= 6;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 6;
+                        P2HitBox.Y += 6;
                     }
                    
                 }
                 else if (level >= 60 && level < 70)
                 {
 
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 7;
+                        P2HitBox.Y -= 7;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 7;
+                        P2HitBox.Y += 7;
                     }
                     
                 }
                 else if (level >= 70 && level < 80)
                 {
                    
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 8;
+                        P2HitBox.Y -= 8;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 8;
+                        P2HitBox.Y += 8;
                     }
                    
                 }
                 else if (level >= 80 && level < 90)
                 {
                    
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 9;
+                        P2HitBox.Y -= 9;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 9;
+                        P2HitBox.Y += 9;
                     }
                    
                 }
@@ -287,13 +290,13 @@ namespace pong
                 {
                     
 
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 10;
+                        P2HitBox.Y -= 10;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 10;
+                        P2HitBox.Y += 10;
                     }
                    
                 }
@@ -301,22 +304,22 @@ namespace pong
                 {
                     
 
-                    if (PLR_Y > BALL_Y)
+                    if (P2HitBox.Y > BallHitBox.Y)
                     {
-                        PLR_Y -= 11;
+                        P2HitBox.Y -= 11;
                     }
-                    else if (PLR_Y < BALL_Y)
+                    else if (P2HitBox.Y < BallHitBox.Y)
                     {
-                        PLR_Y += 11;
+                        P2HitBox.Y += 11;
                     }
                    
                 }
-                if (PLR_Y < 0)
+                if (P2HitBox.Y < 0)
                 {
-                    PLR_Y = 0;
+                    P2HitBox.Y = 0;
                 }
-                if (PLR_Y > _graphics.GraphicsDevice.Viewport.Height -Height)
-                    PLR_Y = _graphics.GraphicsDevice.Viewport.Height - Height;
+                if (P2HitBox.Y > _graphics.GraphicsDevice.Viewport.Height -Height)
+                    P2HitBox.Y = _graphics.GraphicsDevice.Viewport.Height - Height;
                 return;
             }
         }//broken speeds FIX!!!!!!
@@ -369,7 +372,7 @@ namespace pong
 
                     //starts game
                 }
-                return;
+               
             }
             void movePlr(int Speed)
             {
@@ -420,7 +423,13 @@ namespace pong
         }
         void storehighscore(int highscore) 
         {
-            string highscorefile = @"C:\Users\oscar\Documents\GitHub\pong\highscore_pong.txt";
+        }
+        void loadhighscor(string filePath,StreamReader _streamreader,List<string>line)
+        {   
+            for (int i = 0; i < highscorefile.Length; i++)
+            {
+                scores.Add(SR.ReadLine());
+            }
         }
     }
 }
