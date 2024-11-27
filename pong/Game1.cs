@@ -24,9 +24,9 @@ namespace pong
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         const int plrSpeed = 10;
-        const int BallSpeed = 8;
+        const int BallSpeed = 10;
         bool Nstarted = true;
-        int highscore = 1972;
+        int highscore;
         int exitcount = 0;
         int timer;
         SpriteFont playfont,endfont;
@@ -79,7 +79,7 @@ namespace pong
             startscreen = Content.Load<Texture2D>("splash screen");
             gameoverscreen = Content.Load<Texture2D>("Game over splash");
             playbounce = Content.Load<SoundEffect>("ballBounce");
-
+            //loadhighscor(highscorefile,SR,highscore);
             // TODO: use this.Content to load your game content here
         }
 
@@ -97,18 +97,25 @@ namespace pong
             {
                 Nstarted = false;
                 gameover = false;
+                P1pointCounter = 0;
+                P2pointCounter = 0;
+                
             }
-            pointssystem( P1pointCounter, P2pointCounter);
+            pointssystem();
             level(P1pointCounter,P2HitBox.Height);
             movePlr(plrSpeed);
             moveball(BallSpeed);
             ishighscore(P1pointCounter, highscore);
-            clock(P2pointCounter, timer, gameover, Nstarted);
+            clock(P2pointCounter, timer);
             base.Update(gameTime);  
         }
         protected override void Draw(GameTime gameTime)
         {
             Vector2 textPos = new Vector2(0, 0);
+            Vector2 scorepos = new Vector2(367, 136),
+                    highscorepos=new Vector2(496, 204),
+                    levelpos = new Vector2(623, 337),
+                    clockpos = new Vector2(554, 272);
 
             GraphicsDevice.Clear(Color.Black);
 
@@ -116,6 +123,11 @@ namespace pong
             if (Nstarted == true && gameover == true)
             {
                 _spriteBatch.Draw(gameoverscreen, background, Color.White);
+                _spriteBatch.DrawString(endfont,$"{P1pointCounter}",scorepos, Color.White);
+                _spriteBatch.DrawString(endfont, $"{highscore}", highscorepos, Color.White);
+                _spriteBatch.DrawString(endfont, $"{P1pointCounter/ 10}", levelpos, Color.White);
+                _spriteBatch.DrawString(endfont, $"{timer}", clockpos, Color.White);
+
             }
             else if (Nstarted == false && gameover == false)
             {
@@ -136,23 +148,24 @@ namespace pong
 
             base.Draw(gameTime);
         }
-        void pointssystem(int P1point, int P2point)
+            void pointssystem()
         {
 
-            if (BallHitBox.X < 0 || BallHitBox.X < _graphics.GraphicsDevice.Viewport.Width)
+            if (BallHitBox.X < 0 || BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width)
             { 
              if (BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width / 2)
              {
-                P1point++;
+                P1pointCounter++;
              }
              else
              {
-                P2point++;
+                P2pointCounter++;
              }
              BallHitBox.X = _graphics.GraphicsDevice.Viewport.Width / 2;
              BallHitBox.Y = _graphics.GraphicsDevice.Viewport.Height / 2;
              gamePlaying = false;
             }
+           
             return;
 
         }
@@ -322,7 +335,7 @@ namespace pong
                     P2HitBox.Y = _graphics.GraphicsDevice.Viewport.Height - Height;
                 return;
             }
-        }//broken speeds FIX!!!!!!
+        }//done
             void moveball(int Speed)
             {
                 if ((Keyboard.GetState().IsKeyDown(Keys.Space) || GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed) || gamePlaying == true)
@@ -392,7 +405,7 @@ namespace pong
                     P1HitBox.Y = _graphics.GraphicsDevice.Viewport.Height - P1HitBox.Height;
                 return;
             }
-            void clock(int points, int clock,bool GO,bool NS)
+            int clock(int points, int clock)
             {
                 if (points < 10)
                 {
@@ -400,10 +413,10 @@ namespace pong
                 }
                 else if (points == 10)
                 {
-                    GO = true;
-                    NS = true;
+                    gameover = true;
+                    Nstarted = true;
                 }
-            return;
+            return clock;
             }
             void ishighscore(int points, int score)
             {
@@ -421,15 +434,22 @@ namespace pong
             pos.Y = MathHelper.Lerp(pos.Y, ballpos.Y, 1);
             
         }
-        void storehighscore(int highscore) 
+        void storehighscore(int highscor,bool gamovr,StreamWriter _streamWriter) 
         {
+            if (gamovr == true)
+            {
+                _streamWriter.Write(highscor);
+            }
+            _streamWriter.Close();
         }
-        void loadhighscor(string filePath,StreamReader _streamreader,List<string>line)
+        int loadhighscor(string filePath,StreamReader _streamreader,int highscor)
         {   
             for (int i = 0; i < highscorefile.Length; i++)
             {
-                scores.Add(SR.ReadLine());
+               highscor = int.Parse(_streamreader.ReadLine());
             }
+            _streamreader.Close();
+            return highscor;
         }
     }
 }
