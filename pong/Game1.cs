@@ -24,11 +24,12 @@ namespace pong
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         const int plrSpeed = 10;
-        const int BallSpeed = 10;
+        int BallSpeed = 5;
         bool Nstarted = true;
         int highscore;
         int exitcount = 0;
         int timer;
+        bool aiup;
         SpriteFont playfont,endfont;
         Texture2D PLR1, PLR2, Ball, startscreen, Board, gameoverscreen;
         Rectangle P1HitBox, P2HitBox, BallHitBox, board, background;
@@ -63,7 +64,7 @@ namespace pong
             background = new Rectangle(0, 0, _graphics.GraphicsDevice.Viewport.Width, _graphics.GraphicsDevice.Viewport.Height);
             BallHitBox = new Rectangle((_graphics.GraphicsDevice.Viewport.Width) / 2, (_graphics.GraphicsDevice.Viewport.Height) / 2, 50, 50);
             board = new Rectangle((_graphics.GraphicsDevice.Viewport.Width) / 2, 0, 5, _graphics.GraphicsDevice.Viewport.Height);
-            SR = new StreamReader(highscorefile);
+            
             base.Initialize();
         }
 
@@ -99,9 +100,11 @@ namespace pong
                 gameover = false;
                 P1pointCounter = 0;
                 P2pointCounter = 0;
+                BallSpeed = 5;
                 
             }
             pointssystem();
+            //AI(plrSpeed);
             level(P1pointCounter,P2HitBox.Height);
             movePlr(plrSpeed);
             moveball(BallSpeed);
@@ -150,20 +153,39 @@ namespace pong
         }
             void pointssystem()
         {
-
-            if (BallHitBox.X < 0 || BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width)
-            { 
-             if (BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width / 2)
-             {
-                P1pointCounter++;
-             }
-             else
-             {
-                P2pointCounter++;
-             }
-             BallHitBox.X = _graphics.GraphicsDevice.Viewport.Width / 2;
-             BallHitBox.Y = _graphics.GraphicsDevice.Viewport.Height / 2;
-             gamePlaying = false;
+            if (cheats == false)
+            {
+                if (BallHitBox.X < 0 || BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width)
+                {
+                    if (BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width / 2)
+                    {
+                        P1pointCounter++;
+                    }
+                    else
+                    {
+                        P2pointCounter++;
+                    }
+                    BallHitBox.X = _graphics.GraphicsDevice.Viewport.Width / 2;
+                    BallHitBox.Y = _graphics.GraphicsDevice.Viewport.Height / 2;
+                    gamePlaying = false;
+                }
+            }
+            else
+            {
+                if (BallHitBox.X < 0 || BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width)
+                {
+                    if (BallHitBox.X > _graphics.GraphicsDevice.Viewport.Width / 2)
+                    {
+                        P1pointCounter+= 10;
+                    }
+                    else
+                    {
+                        P2pointCounter++;
+                    }
+                    BallHitBox.X = _graphics.GraphicsDevice.Viewport.Width / 2;
+                    BallHitBox.Y = _graphics.GraphicsDevice.Viewport.Height / 2;
+                    gamePlaying = false;
+                }
             }
            
             return;
@@ -171,170 +193,176 @@ namespace pong
         }
             void level(int level,int Height)
         {
-            
-            if (GamePad.GetState(PlayerIndex.One).Buttons.LeftShoulder == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.C))
+
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.LeftShoulder == ButtonState.Pressed ||Keyboard.GetState().IsKeyDown(Keys.C))
+            //{
+            //    cheats = true;
+            //}
+            //if (cheats == false)
+            //{
+            //    if (level < 10)
+            //    {
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 1;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 1;
+            //        }
+
+
+            //    }
+            //    else if (level >= 10 && level < 20)
+            //    {
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 2;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 2;
+            //        }
+
+            //    }
+            //    else if (level >= 20 && level < 30)
+            //    {
+
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 3;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 3;
+            //        }
+
+            //    }
+            //    else if (level >= 30 && level < 40)
+            //    {
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 4;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 4;
+            //        }
+
+            //    }
+            //    else if (level >= 40 && level < 50)
+            //    {
+
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 5;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 5;
+            //        }
+
+            //    }
+            //    else if (level >= 50 && level < 60)
+            //    {
+
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 6;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 6;
+            //        }
+
+            //    }
+            //    else if (level >= 60 && level < 70)
+            //    {
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 7;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 7;
+            //        }
+
+            //    }
+            //    else if (level >= 70 && level < 80)
+            //    {
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 8;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 8;
+            //        }
+
+            //    }
+            //    else if (level >= 80 && level < 90)
+            //    {
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 9;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 9;
+            //        }
+
+            //    }
+            //    else if (level >= 90 && level < 100)
+            //    {
+
+
+            if (P2HitBox.Y > BallHitBox.Y)
             {
-                cheats = true;
+                P2HitBox.Y -= 10;
             }
-            if (cheats == false)
+            else if (P2HitBox.Y < BallHitBox.Y)
             {
-                if (level < 10)
-                {
-                    
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 1;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 1;
-                    }
-                  
-
-                }
-                else if (level >= 10 && level < 20)
-                {
-                   
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 2;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 2;
-                    }
-                    
-                }
-                else if (level >= 20 && level < 30)
-                {
-                  
-
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 3;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 3;
-                    }
-                   
-                }
-                else if (level >= 30 && level < 40)
-                {
-                   
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 4;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 4;
-                    }
-                   
-                }
-                else if (level >= 40 && level < 50)
-                {
-                    
-
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 5;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 5;
-                    }
-                   
-                }
-                else if (level >= 50 && level < 60)
-                {
-                   
-
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 6;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 6;
-                    }
-                   
-                }
-                else if (level >= 60 && level < 70)
-                {
-
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 7;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 7;
-                    }
-                    
-                }
-                else if (level >= 70 && level < 80)
-                {
-                   
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 8;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 8;
-                    }
-                   
-                }
-                else if (level >= 80 && level < 90)
-                {
-                   
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 9;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 9;
-                    }
-                   
-                }
-                else if (level >= 90 && level < 100)
-                {
-                    
-
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 10;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 10;
-                    }
-                   
-                }
-                else if (level >= 100)
-                {
-                    
-
-                    if (P2HitBox.Y > BallHitBox.Y)
-                    {
-                        P2HitBox.Y -= 11;
-                    }
-                    else if (P2HitBox.Y < BallHitBox.Y)
-                    {
-                        P2HitBox.Y += 11;
-                    }
-                   
-                }
-                if (P2HitBox.Y < 0)
-                {
-                    P2HitBox.Y = 0;
-                }
-                if (P2HitBox.Y > _graphics.GraphicsDevice.Viewport.Height -Height)
-                    P2HitBox.Y = _graphics.GraphicsDevice.Viewport.Height - Height;
-                return;
+                P2HitBox.Y += 10;
             }
+
+            //    }
+            //    else if (level >= 100)
+            //    {
+
+
+            //        if (P2HitBox.Y > BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y -= 11;
+            //        }
+            //        else if (P2HitBox.Y < BallHitBox.Y)
+            //        {
+            //            P2HitBox.Y += 11;
+            //        }
+
+            //    }
+            //    if (P2HitBox.Y < 0)
+            //    {
+            //        P2HitBox.Y = 0;
+            //    }
+            if (P2HitBox.Y > _graphics.GraphicsDevice.Viewport.Height - Height)
+                P2HitBox.Y = _graphics.GraphicsDevice.Viewport.Height - Height;
+            return;
+            //}
+            //else
+            //{
+            //    P2HitBox.Y = 0;
+            //    P1pointCounter++;
+            //}
+
         }//done
             void moveball(int Speed)
             {
@@ -345,11 +373,13 @@ namespace pong
                     if (BallHitBox.Intersects(P1HitBox) && BallHitBox.X <= P1HitBox.Right)
                     {
                         Left = true;
+                        BallSpeed++;
                         playbounce.Play();
                     }
                     else if (BallHitBox.Intersects(P2HitBox) && BallHitBox.X <= P2HitBox.Left)
                     {
                         Left = false;
+                        BallSpeed++;
                         playbounce.Play();
                     }//bounce back from paddle
                     if (Left == true)
@@ -427,12 +457,12 @@ namespace pong
                 return;
             }
        
-        void AI()
+        void AI(int Speed)
         {
-            Vector2 pos = new Vector2(50,400);
-            Vector2 ballpos = new Vector2(50, 200);
-            pos.Y = MathHelper.Lerp(pos.Y, ballpos.Y, 1);
-            
+            Vector2 pos = new Vector2(P2HitBox.X, P2HitBox.Y);
+            Vector2 ballpos = new Vector2(BallHitBox.X, BallHitBox.Y);
+            pos.Y = MathHelper.Lerp(pos.Y, ballpos.Y, 0.5f);
+            return;
         }
         void storehighscore(int highscor,bool gamovr,StreamWriter _streamWriter) 
         {
@@ -443,7 +473,8 @@ namespace pong
             _streamWriter.Close();
         }
         int loadhighscor(string filePath,StreamReader _streamreader,int highscor)
-        {   
+        {
+            
             for (int i = 0; i < highscorefile.Length; i++)
             {
                highscor = int.Parse(_streamreader.ReadLine());
