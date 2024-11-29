@@ -104,8 +104,8 @@ namespace pong
                 
             }
             pointssystem();
-            //AI(plrSpeed);
-            level(P1pointCounter,P2HitBox.Height);
+            (P2HitBox.X,P2HitBox.Y) =  AI(plrSpeed);
+           // level(P1pointCounter,P2HitBox.Height);
             movePlr(plrSpeed);
             moveball(BallSpeed);
             ishighscore(P1pointCounter, highscore);
@@ -117,7 +117,7 @@ namespace pong
             Vector2 textPos = new Vector2(0, 0);
             Vector2 scorepos = new Vector2(367, 136),
                     highscorepos=new Vector2(496, 204),
-                    levelpos = new Vector2(623, 337),
+                   
                     clockpos = new Vector2(554, 272);
 
             GraphicsDevice.Clear(Color.Black);
@@ -128,8 +128,7 @@ namespace pong
                 _spriteBatch.Draw(gameoverscreen, background, Color.White);
                 _spriteBatch.DrawString(endfont,$"{P1pointCounter}",scorepos, Color.White);
                 _spriteBatch.DrawString(endfont, $"{highscore}", highscorepos, Color.White);
-                _spriteBatch.DrawString(endfont, $"{P1pointCounter/ 10}", levelpos, Color.White);
-                _spriteBatch.DrawString(endfont, $"{timer}", clockpos, Color.White);
+                _spriteBatch.DrawString(endfont, $"{timer / 60} seconds", clockpos, Color.White);
 
             }
             else if (Nstarted == false && gameover == false)
@@ -370,7 +369,7 @@ namespace pong
                 {
                     gamePlaying = true;
 
-                    if (BallHitBox.Intersects(P1HitBox) && BallHitBox.X <= P1HitBox.Right)
+                    if (BallHitBox.Intersects(P1HitBox) && BallHitBox.Left <= P1HitBox.Right)
                     {
                         Left = true;
                         BallSpeed++;
@@ -439,7 +438,7 @@ namespace pong
             {
                 if (points < 10)
                 {
-                    clock++;
+                    timer++;
                 }
                 else if (points == 10)
                 {
@@ -457,12 +456,15 @@ namespace pong
                 return;
             }
        
-        void AI(int Speed)
+        (int,int) AI(int Speed)
         {
             Vector2 pos = new Vector2(P2HitBox.X, P2HitBox.Y);
+            
             Vector2 ballpos = new Vector2(BallHitBox.X, BallHitBox.Y);
-            pos.Y = MathHelper.Lerp(pos.Y, ballpos.Y, 0.5f);
-            return;
+            float c = ballpos.Y / -ballpos.X;
+            float y = (-_graphics.GraphicsDevice.Viewport.Width) + c;
+            pos.Y = y;
+            return ((int)pos.X,(int)pos.Y);
         }
         void storehighscore(int highscor,bool gamovr,StreamWriter _streamWriter) 
         {

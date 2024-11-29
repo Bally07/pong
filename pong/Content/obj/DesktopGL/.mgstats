@@ -1,6 +1,7 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/oscar/Documents/GitHub/pong/pong/Content/endscreenfonts.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/endscreenfonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2744352
 "C:/Users/oscar/Documents/GitHub/pong/pong/Content/File.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/Fonts.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2633373
+"C:/Users/oscar/Documents/GitHub/pong/pong/Content/Game over splash.png","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/Game over splash.xnb","TextureProcessor","Texture2DContent",6857,2522885,0.3082581
 "C:/Users/oscar/Documents/GitHub/pong/pong/Content/over.fx","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/over.xnb","EffectProcessor","CompiledEffectContent",888,1295,0.4402645
 "C:/Users/oscar/Documents/GitHub/pong/pong/Content/over.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/over.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2836961
 "C:/Users/oscar/Documents/GitHub/pong/pong/Content/play.spritefont","C:/Users/oscar/Documents/GitHub/pong/pong/Content/bin/DesktopGL/play.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2546095

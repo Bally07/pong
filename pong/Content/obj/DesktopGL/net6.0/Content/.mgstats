@@ -1,7 +1,7 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ball.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",1513,26329,0.1877563
 "C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ballBounce.wav","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/ballBounce.xnb","SoundEffectProcessor","SoundEffectContent",39612,39461,0.4188642
-"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/Game over splash.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/Game over splash.xnb","TextureProcessor","Texture2DContent",16776,2522885,0.0785887
+"C:/Users/oscar/Documents/GitHub/pong/Pong/Content/Game over splash.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/Game over splash.xnb","TextureProcessor","Texture2DContent",6857,2522885,0.2369283
 "C:/Users/oscar/Documents/GitHub/pong/Pong/Content/over.spritefont","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/over.xnb","FontDescriptionProcessor","SpriteFontContent",2077,70687,0.3103255
 "C:/Users/oscar/Documents/GitHub/pong/Pong/Content/padle.png","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/padle.xnb","TextureProcessor","Texture2DContent",185,4465,0.0021268
 "C:/Users/oscar/Documents/GitHub/pong/Pong/Content/play.spritefont","C:/Users/oscar/Documents/GitHub/pong/Pong/Content/bin/DesktopGL/Content/play.xnb","FontDescriptionProcessor","SpriteFontContent",2077,21535,0.0208572
