@@ -104,8 +104,8 @@ namespace pong
                 
             }
             pointssystem();
-            (P2HitBox.X,P2HitBox.Y) =  AI(plrSpeed);
-           // level(P1pointCounter,P2HitBox.Height);
+            //P2HitBox =  AI(plrSpeed,P2HitBox,BallHitBox);
+          level(P1pointCounter,P2HitBox.Height);
             movePlr(plrSpeed);
             moveball(BallSpeed);
             ishighscore(P1pointCounter, highscore);
@@ -456,15 +456,34 @@ namespace pong
                 return;
             }
        
-        (int,int) AI(int Speed)
+        Rectangle AI(int Speed,Rectangle AIbody,Rectangle ballbody)
         {
-            Vector2 pos = new Vector2(P2HitBox.X, P2HitBox.Y);
+            //Vector2 pos = new Vector2(P2HitBox.X, P2HitBox.Y);
+
+            //Vector2 ballpos = new Vector2(BallHitBox.X, BallHitBox.Y);
+            //float c = ballpos.Y / -ballpos.X;
+            //float y = (-_graphics.GraphicsDevice.Viewport.Width) + c;
+            //pos.Y = y;
             
-            Vector2 ballpos = new Vector2(BallHitBox.X, BallHitBox.Y);
-            float c = ballpos.Y / -ballpos.X;
-            float y = (-_graphics.GraphicsDevice.Viewport.Width) + c;
-            pos.Y = y;
-            return ((int)pos.X,(int)pos.Y);
+            if (AIbody.Y < ballbody.Y)
+            {
+                AIbody.Y += 10;
+            }
+            else if (AIbody.Y > ballbody.Y)
+            {
+                AIbody.Y -= 10;
+            }
+            if (AIbody.Y == 0) 
+            {
+                AIbody.Y = 0;
+            }
+            if (AIbody.Y == _graphics.GraphicsDevice.Viewport.Height - AIbody.Height)
+            {
+                AIbody.Y = _graphics.GraphicsDevice.Viewport.Height - AIbody.Height;
+            }
+
+
+            return AIbody;
         }
         void storehighscore(int highscor,bool gamovr,StreamWriter _streamWriter) 
         {
