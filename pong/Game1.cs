@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 using System.Collections;
 using System.IO;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 
 namespace pong
@@ -104,8 +105,9 @@ namespace pong
                 
             }
             pointssystem();
-            //P2HitBox =  AI(plrSpeed,P2HitBox,BallHitBox);
-          level(P1pointCounter,P2HitBox.Height);
+            P2HitBox = AI(PLRSPEED, P2HitBox, BallHitBox);
+            //level(P1pointCounter,P2HitBox.Height);
+
             movePlr(PLRSPEED);
             moveball(BallSpeed);
             ishighscore(P1pointCounter, highscore);
@@ -457,29 +459,45 @@ namespace pong
             }       
         Rectangle AI(int Speed,Rectangle AIbody,Rectangle ballbody)
         {
-            //Vector2 pos = new Vector2(P2HitBox.X, P2HitBox.Y);
+            Vector2 pos = new Vector2(AIbody.X, AIbody.Y);
 
-            //Vector2 ballpos = new Vector2(BallHitBox.X, BallHitBox.Y);
-            //float c = ballpos.Y / -ballpos.X;
-            //float y = (-_graphics.GraphicsDevice.Viewport.Width) + c;
-            //pos.Y = y;
-            
-            if (AIbody.Y < ballbody.Y)
+            Vector2 ballpos = new Vector2(ballbody.X, ballbody.Y);
+            if (Speed > 0)
             {
-                AIbody.Y += 10;
+                float c = ballpos.Y + ballpos.X;
+                float prediction = (-_graphics.GraphicsDevice.Viewport.Width) + c;
+                if (prediction < 0)
+                    prediction = -prediction;
+                if (prediction > _graphics.GraphicsDevice.Viewport.Height)
+                    prediction = _graphics.GraphicsDevice.Viewport.Height - (prediction - _graphics.GraphicsDevice.Viewport.Height);
+                pos.Y = MathHelper.LerpPrecise(pos.Y, prediction, .1f);
+                //if (pos.Y > prediction)
+                //{
+                //    pos.Y += 1 * (pos.Y / prediction);
+                //}
+
+
+                //pos.Y = prediction;
+                AIbody.Y = (int)pos.Y;
             }
-            else if (AIbody.Y > ballbody.Y)
-            {
-                AIbody.Y -= 10;
-            }
-            if (AIbody.Y == 0) 
-            {
-                AIbody.Y = 0;
-            }
-            if (AIbody.Y == _graphics.GraphicsDevice.Viewport.Height - AIbody.Height)
-            {
-                AIbody.Y = _graphics.GraphicsDevice.Viewport.Height - AIbody.Height;
-            }
+
+
+            //if (AIbody.Y < ballbody.Y)
+            //{
+            //    AIbody.Y += 10;
+            //}
+            //else if (AIbody.Y > ballbody.Y)
+            //{
+            //    AIbody.Y -= 10;
+            //}
+            //if (AIbody.Y == 0)
+            //{
+            //    AIbody.Y = 0;
+            //}
+            //if (AIbody.Y == _graphics.GraphicsDevice.Viewport.Height - AIbody.Height)
+            //{
+            //    AIbody.Y = _graphics.GraphicsDevice.Viewport.Height - AIbody.Height;
+            //}
 
 
             return AIbody;
