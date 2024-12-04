@@ -23,7 +23,7 @@ namespace pong
         StreamReader SR;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        const int plrSpeed = 10;
+        const int PLRSPEED = 10;
         int BallSpeed = 5;
         bool Nstarted = true;
         int highscore;
@@ -106,7 +106,7 @@ namespace pong
             pointssystem();
             //P2HitBox =  AI(plrSpeed,P2HitBox,BallHitBox);
           level(P1pointCounter,P2HitBox.Height);
-            movePlr(plrSpeed);
+            movePlr(PLRSPEED);
             moveball(BallSpeed);
             ishighscore(P1pointCounter, highscore);
             clock(P2pointCounter, timer);
