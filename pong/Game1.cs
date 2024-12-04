@@ -454,8 +454,7 @@ namespace pong
                     score = points;
                 }
                 return;
-            }
-       
+            }       
         Rectangle AI(int Speed,Rectangle AIbody,Rectangle ballbody)
         {
             //Vector2 pos = new Vector2(P2HitBox.X, P2HitBox.Y);
@@ -493,9 +492,8 @@ namespace pong
             }
             _streamWriter.Close();
         }
-        int loadhighscor(string filePath,StreamReader _streamreader,int highscor)
-        {
-            
+        int loadhighscor(string filePath, StreamReader _streamreader, int highscor)
+        {            
             for (int i = 0; i < highscorefile.Length; i++)
             {
                highscor = int.Parse(_streamreader.ReadLine());
