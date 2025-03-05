@@ -4,18 +4,14 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ball.png</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/ballBounce.wav</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/Game over splash.png</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/over.spritefont</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/padle.png</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/play.spritefont</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/pongBoard.png</File>
-    <File>C:/Users/oscar/Documents/GitHub/pong/Pong/Content/splash screen.png</File>
+    <File>C:/Users/oscar/OneDrive/Documents/GitHub/pong/Pong/Content/ball.png</File>
+    <File>C:/Users/oscar/OneDrive/Documents/GitHub/pong/Pong/Content/ballBounce.wav</File>
+    <File>C:/Users/oscar/OneDrive/Documents/GitHub/pong/Pong/Content/Game over splash.png</File>
+    <File>C:/Users/oscar/OneDrive/Documents/GitHub/pong/Pong/Content/padle.png</File>
+    <File>C:/Users/oscar/OneDrive/Documents/GitHub/pong/Pong/Content/pongBoard.png</File>
+    <File>C:/Users/oscar/OneDrive/Documents/GitHub/pong/Pong/Content/splash screen.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
