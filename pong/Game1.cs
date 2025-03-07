@@ -30,6 +30,7 @@ namespace pong
         int highscore;
         int exitcount = 0;
         int timer;
+        int hits = 0;
         bool aiup;
         SpriteFont playfont,endfont;
         Texture2D PLR1, PLR2, Ball, startscreen, Board, gameoverscreen;
@@ -46,9 +47,7 @@ namespace pong
         {
            
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferWidth = 1600;
-            _graphics.PreferredBackBufferHeight = 900;
-            _graphics.IsFullScreen = true;
+            _graphics.IsFullScreen = false;
             _graphics.ApplyChanges();
            
             Content.RootDirectory = "Content";
@@ -109,7 +108,7 @@ namespace pong
             //level(P1pointCounter,P2HitBox.Height);
 
             movePlr(PLRSPEED);
-            moveball(BallSpeed);
+            moveball(BallSpeed,hits);
             ishighscore(P1pointCounter, highscore);
             clock(P2pointCounter, timer);
             base.Update(gameTime);  
@@ -365,22 +364,27 @@ namespace pong
             //}
 
         }//done
-            void moveball(int Speed)
+            void moveball(int Speed ,int collisions)
             {
+             
                 if ((Keyboard.GetState().IsKeyDown(Keys.Space) || GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed) || gamePlaying == true)
                 {
                     gamePlaying = true;
+                    if (collisions % 10 == 0)
+                    {
+                    Speed++;
+                    }
 
                     if (BallHitBox.Intersects(P1HitBox) && BallHitBox.Left <= P1HitBox.Right)
                     {
                         Left = true;
-                        BallSpeed++;
+                    collisions++;
                         playbounce.Play();
                     }
                     else if (BallHitBox.Intersects(P2HitBox) && BallHitBox.X <= P2HitBox.Left)
                     {
                         Left = false;
-                        BallSpeed++;
+                    collisions++;
                         playbounce.Play();
                     }//bounce back from paddle
                     if (Left == true)
@@ -471,6 +475,7 @@ namespace pong
                 if (prediction > _graphics.GraphicsDevice.Viewport.Height)
                     prediction = _graphics.GraphicsDevice.Viewport.Height - (prediction - _graphics.GraphicsDevice.Viewport.Height);
                 pos.Y = MathHelper.LerpPrecise(pos.Y, prediction, .1f);
+
                 //if (pos.Y > prediction)
                 //{
                 //    pos.Y += 1 * (pos.Y / prediction);
@@ -479,6 +484,10 @@ namespace pong
 
                 //pos.Y = prediction;
                 AIbody.Y = (int)pos.Y;
+                if (AIbody.Y < 0)
+                {
+                    AIbody.Y = 0;
+                }
             }
 
 
