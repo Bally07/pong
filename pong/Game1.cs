@@ -46,8 +46,7 @@ namespace pong
         {
            
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferWidth = 1600;
-            _graphics.PreferredBackBufferHeight = 900;
+
             _graphics.IsFullScreen = false;
             _graphics.ApplyChanges();
            
